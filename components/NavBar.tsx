@@ -6,6 +6,7 @@ export default function NavBar() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
   const [toggle, setToggle] = useState(true)
   const handleClick = () => {
+    throw new Error('Sentry Frontend Error')
     setIsDrawerOpen(!isDrawerOpen)
   }
 
