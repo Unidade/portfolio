@@ -20,7 +20,7 @@ export default function RootLayout({
       */}
       <head />
       <body
-        className={`${inter.variable} font-sans sm:px-6 py-2 text-gray-800 max-w-7xl`}
+        className={`${inter.variable} font-sans overflow-x-hidden sm:px-6 py-2 text-gray-800 max-w-7xl`}
       >
         <NavBar />
         {children}

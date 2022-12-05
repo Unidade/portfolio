@@ -3,45 +3,22 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 export default function NavBar() {
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
-  const handleClick = () => {
-    setIsDrawerOpen(!isDrawerOpen)
-  }
-
   return (
     <header className='divide-y-2'>
       <nav className='flex justify-between items-center '>
         <div data-type='nav__right'>
           <h1 className='font-bold text-2xl tracking-tight'>Dario Rodrigues</h1>
         </div>
-        <div
-          data-type='nav__left'
-          className={`mr-2 ${isDrawerOpen ? 'self-center ' : ''}`}
-        >
-          <div className={`space-y-2 inline-block`} onClick={handleClick}>
+        <div data-type='nav__left' className={`mr-2 [display:inherit]`}>
+          <div className={`space-y-2 inline-block z-20`}>
+            <div className={`w-6 transition-all h-0.5 bg-gray-600`}></div>
             <div
-              className={`w-6 transition-all h-0.5 bg-gray-600 ${
-                isDrawerOpen ? 'rotate-45 translate-y-3' : ''
-              }`}
+              className={`w-6 h-0.5 transition-all duration-75 bg-gray-600 `}
             ></div>
-            <div
-              className={`w-6 h-0.5 transition-all duration-75 bg-gray-600 ${
-                isDrawerOpen ? 'invisible' : ''
-              }`}
-            ></div>
-            <div
-              className={`w-6 transition-all h-0.5 bg-gray-600 ${
-                isDrawerOpen ? '-rotate-45 -translate-y-2' : ''
-              }`}
-            ></div>
+            <div className={`w-6 transition-all h-0.5 bg-gray-600 `}></div>
           </div>
-
           <ul
-            className={`flex gap-6 z-1 h-screen absolute w-max items-center transition-all flex-col justify-center ${
-              isDrawerOpen
-                ? '-translate-x-full visible opacity-1'
-                : '-translate-y-full translate-x-full hidden invisible opacity-0'
-            }`}
+            className={`flex gap-10 translate-y-[-12px] w-72 text-center invisible select-none z-10 bg-white h-screen absolute items-center transition-all flex-col justify-center`}
           >
             <li className='hover:text-gray-500'>
               <Link href='#projetos'>Projetos</Link>
