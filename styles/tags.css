@@ -1,0 +1,31 @@
+/* Tags colors*/
+.react {
+  @apply bg-blue-400/80;
+}
+.mongoDB {
+  @apply bg-green-400/80;
+}
+.typescript {
+  @apply bg-sky-400/80;
+}
+.express {
+  @apply bg-slate-600/80;
+}
+.nodeJS {
+  @apply bg-emerald-600/80;
+}
+.postgreSQL {
+  @apply bg-cyan-600/80;
+}
+.nextJS {
+  @apply bg-gray-700/80;
+}
+.jest {
+  @apply bg-red-400/80;
+}
+.materialUI {
+  @apply bg-pink-400/80;
+}
+.tailwindCSS {
+  @apply bg-blue-700/50;
+}
