@@ -3,9 +3,3 @@
 @tailwind utilities;
 
 @import '../styles/tags.css';
-
-.show-mb {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-75%) translateY(-12px);
-}

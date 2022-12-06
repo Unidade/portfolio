@@ -7,11 +7,7 @@ const cards = projects.map((project) => (
 
 export default function ProjectsSection() {
   return (
-    <section
-      id='projetos'
-      data-type='projectCardWrapper'
-      className='flex flex-wrap px-4 gap-14 justify-between'
-    >
+    <section id='projetos' className='flex flex-wrap gap-14 justify-between'>
       {cards}
       {cards}
       {cards}
