@@ -1,40 +1,60 @@
 'use client'
 import Link from 'next/link'
-import { useState } from 'react'
 
 export default function NavBar() {
   return (
     <header className='divide-y-2'>
-      <nav className='flex justify-between items-center '>
-        <div data-type='nav__right'>
-          <h1 className='font-bold text-2xl tracking-tight'>Dario Rodrigues</h1>
-        </div>
-        <div data-type='nav__left' className={`mr-2 [display:inherit]`}>
-          <div className={`space-y-2 inline-block z-20`}>
-            <div className={`w-6 transition-all h-0.5 bg-gray-600`}></div>
-            <div
-              className={`w-6 h-0.5 transition-all duration-75 bg-gray-600 `}
-            ></div>
-            <div className={`w-6 transition-all h-0.5 bg-gray-600 `}></div>
+      <div className='drawer-content  flex flex-col'>
+        <div className='w-full navbar'>
+          <div className='flex-1 font-bold text-2xl tracking-tighter'>
+            Dario Rodrigues
           </div>
-          <ul
-            className={`flex gap-10 translate-y-[-12px] w-72 text-center invisible select-none z-10 bg-white h-screen absolute items-center transition-all flex-col justify-center`}
-          >
-            <li className='hover:text-gray-500'>
-              <Link href='#projetos'>Projetos</Link>
-            </li>
-            <li className='hover:text-gray-500'>
-              <Link href='#'>Currículo</Link>
-            </li>
-            <li className='hover:text-gray-500'>
-              <Link href='#'>Contato</Link>
-            </li>
-          </ul>
+          <div className='flex-none lg:hidden'>
+            <label htmlFor='my-drawer-3' className='btn btn-square btn-ghost'>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                fill='none'
+                viewBox='0 0 24 24'
+                className='inline-block w-6 h-6 stroke-current'
+              >
+                <path
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth='2'
+                  d='M4 6h16M4 12h16M4 18h16'
+                ></path>
+              </svg>
+            </label>
+          </div>
+          <div className='flex-none hidden lg:block'>
+            <ul className='menu menu-horizontal'>
+              <li>
+                <Link href='#projetos'>Projetos</Link>
+              </li>
+              <li>
+                <Link href='#curriculo'>Currículo</Link>
+              </li>
+              <li>
+                <Link href='#contato'>Contato</Link>
+              </li>
+            </ul>
+          </div>
         </div>
-      </nav>
-      <p className='font-medium mt-1'>
-        Eu sou um desenvolvedor web focado no ecossistema React/NextJS
-      </p>
+      </div>
+      <div className='drawer-side'>
+        <label htmlFor='my-drawer-3' className='drawer-overlay'></label>
+        <ul className='menu p-4 w-80 bg-base-100'>
+          <li>
+            <Link href='#projetos'>Projetos</Link>
+          </li>
+          <li>
+            <Link href='#curriculo'>Currículo</Link>
+          </li>
+          <li>
+            <Link href='#contato'>Contato</Link>
+          </li>
+        </ul>
+      </div>
     </header>
   )
 }

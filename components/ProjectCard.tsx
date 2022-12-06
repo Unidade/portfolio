@@ -21,7 +21,7 @@ export default function ProjectCard({
   return (
     <div
       data-type='projectCard'
-      className='lg:max-w-[45%] shadow-xl pb-8 rounded-sm'
+      className='md:max-w-[44%] shadow-xl pb-8 rounded-sm'
     >
       <Link href='https://forex-trading-application.onrender.com/'>
         <Image

@@ -10,7 +10,7 @@ export default function ProjectsSection() {
     <section
       id='projetos'
       data-type='projectCardWrapper'
-      className='flex flex-wrap gap-20 justify-between'
+      className='flex flex-wrap px-4 gap-14 justify-between'
     >
       {cards}
       {cards}
