@@ -20,7 +20,7 @@ permissions:
 
 jobs:
   # Build job
-  build_transfer:
+  transfer:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
