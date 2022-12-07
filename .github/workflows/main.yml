@@ -10,11 +10,28 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
     steps:
-      - uses: actions/checkout@v2
-      - name: creates output
-        run:  npm install && npm run build  # Create nextjs build on .next folder
+      - uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+          cache: ${{ steps.detect-package-manager.outputs.manager }}
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
+        with:
+          # Automatically inject basePath in your Next.js configuration file and disable
+          # server side image optimization (https://nextjs.org/docs/api-reference/next/image#unoptimized).
+          #
+          # You may remove this line if you want to manage the configuration yourself.
+          static_site_generator: next
+      
+      - name: Install dependencies
+        run: npm install
+      - name: Build with Next.js
+        run: npm run build
+      - name: Static HTML export with Next.js
+        run: npx next export
         
       - name: Pushes to another repository
         uses: cpina/github-action-push-to-another-repository@main
@@ -22,9 +39,8 @@ jobs:
           SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: '.next'
+          source-directory: '.out'
           destination-github-username: 'Unidade'
           destination-repository-name: 'Unidade.github.io'
           user-email: dario.rodri123@gmail.com
-          target-directory: ./next
           target-branch: main
