@@ -20,7 +20,7 @@ permissions:
 
 jobs:
   # Build job
-  build:
+  build_transfer:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -45,12 +45,6 @@ jobs:
         run: npm run build
       - name: Static HTML export with Next.js
         run: npx next export
-
-  # Transfer to Unidade.github.io
-  transfer:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
       - name: Pushes to another repository
         uses: cpina/github-action-push-to-another-repository@main
         env:
