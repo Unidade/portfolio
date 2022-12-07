@@ -7,7 +7,10 @@ const cards = projects.map((project) => (
 
 export default function ProjectsSection() {
   return (
-    <section id='projetos' className='flex flex-wrap gap-14 justify-between'>
+    <section
+      id='projetos'
+      className='flex mt-8 flex-wrap gap-14 justify-between'
+    >
       {cards}
       {cards}
       {cards}
