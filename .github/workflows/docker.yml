@@ -1,4 +1,4 @@
-name: Deploy image container to Azure App Service
+name: Deploy image container to Docker Hub
 
 on: 
   push:
