@@ -12,12 +12,6 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 jobs:
   # Build job
   build:
@@ -75,7 +69,7 @@ jobs:
         id: create_release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }} 
         with:
           tag_name: ${{ github.run_number }}
           release_name: Release ${{ github.run_number }}
@@ -83,7 +77,7 @@ jobs:
       - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./website.zip
