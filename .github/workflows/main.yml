@@ -26,4 +26,5 @@ jobs:
           destination-github-username: 'Unidade'
           destination-repository-name: 'Unidade.github.io'
           user-email: dario.rodri123@gmail.com
+          target-directory: ./next
           target-branch: main
