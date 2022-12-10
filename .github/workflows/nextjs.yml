@@ -40,6 +40,8 @@ jobs:
         run: npm run build
       - name: Static HTML export with Next.js
         run: npx next export
+      - name: Create CNAME record
+        run: echo 'dariorodrigues.me' > out/CNAME
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
