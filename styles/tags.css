@@ -29,3 +29,24 @@
 .tailwindCSS {
   @apply bg-blue-700/50;
 }
+.prisma {
+  @apply bg-yellow-500/80;
+}
+.postgreSQL {
+  @apply bg-cyan-600/80;
+}
+
+.next-auth {
+  @apply bg-teal-500/80;
+}
+
+.websocket {
+  @apply bg-stone-500/80;
+}
+.restAPI {
+  @apply bg-indigo-500/80;
+}
+
+.markdown {
+  @apply bg-slate-800/90;
+}

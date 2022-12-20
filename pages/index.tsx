@@ -3,8 +3,10 @@ import CurriculoSection from '../components/sections/CurriculoSection'
 import ProjectsSection from '../components/sections/ProjectsSection'
 
 import Drawer from '../components/Drawer'
+import { GetStaticProps } from 'next'
+import { getProjects } from 'utils/getProjects'
 
-export default function Home() {
+export default function Home({ projects = [] }) {
   return (
     <>
       <Head>
@@ -14,11 +16,19 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Drawer>
-        <main>
-          <ProjectsSection />
-          <CurriculoSection />
-        </main>
+        <ProjectsSection projects={projects} />
+        <CurriculoSection />
       </Drawer>
     </>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const projects = getProjects()
+
+  return {
+    props: {
+      projects,
+    },
+  }
 }

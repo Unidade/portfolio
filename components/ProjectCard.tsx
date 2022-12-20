@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { IProjectInfo } from '../types/projectInfo'
 
-export default function ProjectCard({
+export function ProjectCard({
   title,
   text,
   tagsArray,
@@ -21,18 +21,18 @@ export default function ProjectCard({
   return (
     <div
       data-type='projectCard'
-      className='md:max-w-[44%] shadow-xl pb-8 rounded-sm'
+      className=' shadow  md:max-w-[45%] relative pb-8 rounded-sm '
     >
       <Link href='https://forex-trading-application.onrender.com/'>
         <Image
-          className='rounded'
+          className='rounded object-fit aspect-video drop-shadow-md'
           src={imageSrc}
           alt='screen capture of a website'
         />
       </Link>
-      <div className='flex flex-col mt-3 px-4'>
-        <h2 className='font-medium text-xl self-center'>{title}</h2>
-        <p className='mt-4 text-md'>{text}</p>
+      <div className='flex flex-col mt-4 px-4 '>
+        <h2 className='font-bold text-xl self-center'>{title}</h2>
+        <p className='mt-4 text-md leading-8'>{text}</p>
         <div
           data-type='projectCard__links'
           className='px-4 flex gap-4 mt-6 self-center'

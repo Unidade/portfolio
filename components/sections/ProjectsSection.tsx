@@ -1,20 +1,19 @@
-import ProjectCard from '../ProjectCard'
-import { projects } from '../../data/projects'
+import { ProjectCard } from 'components/ProjectCard'
+import { IProjectInfo } from 'types/projectInfo'
 
-const cards = projects.map((project) => (
-  <ProjectCard key={project.title} {...project} />
-))
-
-export default function ProjectsSection() {
+export default function ProjectsSection({
+  projects = [],
+}: {
+  projects: IProjectInfo[]
+}) {
   return (
     <section
       id='projetos'
       className='flex mt-8 flex-wrap gap-14 justify-between'
     >
-      {cards}
-      {cards}
-      {cards}
-      {cards}
+      {projects.map((project) => (
+        <ProjectCard key={project.title} {...project} />
+      ))}
     </section>
   )
 }
