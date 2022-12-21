@@ -26,6 +26,8 @@ jobs:
         run: npm run build
       - name: Static HTML export with Next.js
         run: npx next export
+      - name: Create .nojekyll file on output
+        run: touch out/.nojekyll
       - name: Create CNAME record
         run: echo 'dariorodrigues.me' > out/CNAME
       - name: Upload artifact
