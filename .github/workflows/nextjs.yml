@@ -7,7 +7,7 @@ name: Publish website
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
+    branches: ['main']
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -20,20 +20,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: "16"
-          cache: ${{ steps.detect-package-manager.outputs.manager }}
-      - name: Setup Pages
-        uses: actions/configure-pages@v2
-        with:
-          # Automatically inject basePath in your Next.js configuration file and disable
-          # server side image optimization (https://nextjs.org/docs/api-reference/next/image#unoptimized).
-          #
-          # You may remove this line if you want to manage the configuration yourself.
-          static_site_generator: next
-    
       - name: Install dependencies
         run: npm install
       - name: Build with Next.js
@@ -47,8 +33,7 @@ jobs:
         with:
           name: github-page
           path: out/
-          
-  
+
   # release static website
   release-project:
     name: Release project
@@ -61,17 +46,17 @@ jobs:
           name: github-page
       - name: Test artifact download
         run: ls -R
-        
+
       - name: Archive site content
         uses: thedoctor0/zip-release@main
-        with: 
+        with:
           filename: website.zip
-        
+
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }} 
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           tag_name: ${{ github.run_number }}
           release_name: Release ${{ github.run_number }}
@@ -85,7 +70,7 @@ jobs:
           asset_path: ./website.zip
           asset_name: website-v${{ github.run_number }}.zip
           asset_content_type: application/zip
-  
+
   # push static assets to Unidade.github.io
   push-project:
     name: Push project
@@ -98,7 +83,7 @@ jobs:
           name: github-page
       - name: Test artifact download
         run: ls -R
-        
+
       - name: Pushes to another repository
         uses: cpina/github-action-push-to-another-repository@main
         env:
