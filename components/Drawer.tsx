@@ -38,17 +38,17 @@ export default function Drawer() {
                 leaveTo='translate-x-full'
               >
                 <Dialog.Panel className='pointer-events-auto relative w-screen max-w-md'>
-                  <div className='flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl'>
+                  <div className='flex h-full flex-col  overflow-y-scroll bg-white py-6 shadow-xl'>
                     <div className='px-4 sm:px-6'>
-                      <Dialog.Title className='text-lg font-medium text-gray-900'>
-                        Side Menu
+                      <Dialog.Title className='text-lg  font-medium text-gray-900'>
+                        Menu
                       </Dialog.Title>
                     </div>
                     <div className='relative mt-6 flex-1 px-4 sm:px-6'>
-                      <ul className='menu p-4 w-80 bg-base-100'>
+                      <ul className='space-y-4 p-4 w-80 bg-base-100'>
                         <li>
                           <Link
-                            className='flex items-center'
+                            className='flex gap-1 items-center'
                             onClick={() => setOpen(!open)}
                             href='#projetos'
                           >
@@ -58,7 +58,7 @@ export default function Drawer() {
                         </li>
                         <li>
                           <Link
-                            className='flex items-center'
+                            className='flex gap-1 items-center'
                             onClick={() => setOpen(!open)}
                             href='#curriculo'
                           >
@@ -68,7 +68,7 @@ export default function Drawer() {
                         </li>
                         <li>
                           <Link
-                            className='flex items-center'
+                            className='flex gap-1 items-center'
                             onClick={() => setOpen(!open)}
                             href='#contato'
                           >
