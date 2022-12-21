@@ -17,7 +17,7 @@ if (isGithubActions) {
 
 const nextConfig = {
   // Necessary to build on GitHub Pages
-  assetPrefix: assetPrefix,
+  assetPrefix: assetPrefix ? assetPrefix : undefined,
   basePath: basePath,
   images: {
     unoptimized: true,

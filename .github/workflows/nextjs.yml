@@ -35,8 +35,6 @@ jobs:
         # Necessary to github pages don't ignore _next folder
       - name: Create .nojekyll file on output
         run: touch out/.nojekyll
-      - name: Create CNAME record
-        run: echo 'dariorodrigues.me' > out/CNAME
       - name: Deploy
         # https://github.com/JamesIves/github-pages-deploy-action
         uses: JamesIves/github-pages-deploy-action@v4
