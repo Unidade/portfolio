@@ -37,6 +37,12 @@ jobs:
         run: touch out/.nojekyll
       - name: Create CNAME record
         run: echo 'dariorodrigues.me' > out/CNAME
+      - name: Deploy
+        # https://github.com/JamesIves/github-pages-deploy-action
+        uses: JamesIves/github-pages-deploy-action@4.4.0
+        with:
+          branch: gh-pages
+          folder: out
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
