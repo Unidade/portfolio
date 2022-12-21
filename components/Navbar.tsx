@@ -1,14 +1,19 @@
+import { useDrawerContext } from 'context/drawerContext'
 import Link from 'next/link'
 
 export default function Navbar() {
+  const { showDrawer, setShowDrawer } = useDrawerContext()
   return (
     <>
-      <div className='w-full navbar border-b-2 !p-0'>
-        <div className='flex-1 text-4xl tracking-tighter font-bold'>
+      <div className='w-full flex py-2 items-center justify-between border-b-2'>
+        <div className='flex-1 text-2xl md:text-4xl tracking-tighter font-bold'>
           Dario Rodrigues
         </div>
         <div className='flex-none lg:hidden'>
-          <label htmlFor='my-drawer-3' className='btn btn-square btn-ghost'>
+          <label
+            onClick={() => setShowDrawer(!showDrawer)}
+            className='flex items-center cursor-pointer'
+          >
             <svg
               xmlns='http://www.w3.org/2000/svg'
               fill='none'
@@ -25,15 +30,30 @@ export default function Navbar() {
           </label>
         </div>
         <div className='flex-none hidden lg:block'>
-          <ul className='menu menu-horizontal'>
+          <ul className='flex items-center justify-around gap-8'>
             <li>
-              <Link href='#projetos'>Projetos</Link>
+              <Link
+                className='hover:bg-gray-50 hover:text-gray-700 p-4'
+                href='#projetos'
+              >
+                Projetos
+              </Link>
             </li>
             <li>
-              <Link href='#curriculo'>Currículo</Link>
+              <Link
+                className='hover:bg-gray-50 hover:text-gray-700 p-4'
+                href='#curriculo'
+              >
+                Currículo
+              </Link>
             </li>
             <li>
-              <Link href='#contato'>Contato</Link>
+              <Link
+                className='hover:bg-gray-50 hover:text-gray-700 p-4'
+                href='#contato'
+              >
+                Contato
+              </Link>
             </li>
           </ul>
         </div>

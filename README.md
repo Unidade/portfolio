@@ -1,34 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Site Portolio
 
-## Getting Started
+Este é o meu site personal destinado a ser uma aglomerado dos meus projetos, descrever meu perfil profissional e minhas habilidades atuais.
 
-First, run the development server:
+## Desenvolvimento do Site
 
-```bash
-npm run dev
-# or
-yarn dev
+Este site foi criado utilizando Typescript, TailwindCSS e NextJS.
+Utiliza a API getStaticProps para pré-renderizar as páginas durante o processo de build. Além de implementar isolamento dos componentes e recursos, facilitando a manutenção.
+
+## Como iniciar
+
+É necessário possuir o [NodeJS](https://nodejs.org/en/) instalado na sua máquina.
+
+Primeiro clone/baixe o repositório, após isso abra algum terminal, na pasta base, execute:
+
+```
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Após terminar a instalação, você pode executar um servidor local com o comando, irá iniciar um servidor local, por padrão, no endereço: http://localhost:3000 . Você pode colocar em um navegador web para visualizar o site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+npm run dev
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Para gerar uma build de produção:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```
+npm run build
+```
 
-## Learn More
+## Customização
 
-To learn more about Next.js, take a look at the following resources:
+Caso queira utilizar esse repositório como template para o seu portfólio, comece substituindo os arquivos na pasta ./data/projects e colocar seu projetos seguido o padrão objeto do tipo **_projectInfo_** presente na pasta ./types, import e exportar os projetos no arquivo index.ts presente na pasta ./data/projects.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Depois mude as informações presente nos Componentes **Navbar**, **CurriculoSection**, **ContatoSection**.

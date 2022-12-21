@@ -2,6 +2,7 @@ import '../styles/globals.css'
 
 import type { AppProps } from 'next/app'
 import { Inter } from '@next/font/google'
+import DrawerProvider from 'context/drawerContext'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -11,7 +12,9 @@ const inter = Inter({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <div className={`${inter.className}`}>
-      <Component {...pageProps} />
+      <DrawerProvider>
+        <Component {...pageProps} />
+      </DrawerProvider>
     </div>
   )
 }

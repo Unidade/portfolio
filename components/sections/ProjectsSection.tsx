@@ -9,7 +9,7 @@ export default function ProjectsSection({
   return (
     <section
       id='projetos'
-      className='flex mt-8 flex-wrap gap-14 justify-between'
+      className='flex mt-8 flex-wrap gap-4 md:gap-8 justify-between'
     >
       {projects.map((project) => (
         <ProjectCard key={project.title} {...project} />

@@ -25,6 +25,7 @@ export function ProjectCard({
     >
       <Link href='https://forex-trading-application.onrender.com/'>
         <Image
+          priority
           className='rounded object-fit aspect-video drop-shadow-md'
           src={imageSrc}
           alt='screen capture of a website'
