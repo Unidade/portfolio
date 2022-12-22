@@ -68,9 +68,13 @@ export default function CurriculoSection() {
         </p>
       </div>
       <div className='text-center'>
-        <button className='mt-8 px-4 py-2 bg-slate-600 text-white rounded'>
+        <a
+          target='_blank'
+          href='/Curriculo_Full-Stack_Dario_Rodrigues_do_Carmo.pdf'
+          className='mt-8 px-4 py-2 bg-slate-600 text-white rounded inline-block'
+        >
           Resumo em PDF
-        </button>
+        </a>
       </div>
     </section>
   )
