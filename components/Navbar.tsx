@@ -59,7 +59,7 @@ export default function Navbar() {
         </div>
       </div>
       <p className='font-medium tracking-wider mt-1'>
-        Eu sou um desenvolvedor focado no ecosistema Next/ReactJS
+        Eu sou um desenvolvedor focado no ecossistema Javascript/React/NextJS
       </p>
     </>
   )
