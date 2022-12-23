@@ -16,9 +16,10 @@ export default function Index({ projects = [] }) {
         <meta content='width=device-width, initial-scale=1' name='viewport' />
         <meta
           name='description'
-          content='Dario Rodrigues portfolio, showcase of his projects'
+          content='Site Portfolio de Dario Rodrigues, desenvolvedor web de React | Typescript | NextJS'
         />
         <link rel='icon' href='/favicon.ico' />
+        <link rel='canonical' href='https://dariorodrigues.me/' />
       </Head>
 
       <div className='container mx-auto px-2 pb-4'>
